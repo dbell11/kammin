@@ -1,4 +1,9 @@
-import { Sparkles, Check } from 'lucide-react';
+'use client';
+
+import { useCallback, useEffect, useState } from 'react';
+import Image from 'next/image';
+import useEmblaCarousel from 'embla-carousel-react';
+import { Sparkles, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
 import AnimatedSection from '@/components/ui/AnimatedSection';
@@ -12,22 +17,101 @@ const features = [
   'Individuelle Beratung und Anpassung',
 ];
 
+const extensionImages = [
+  {
+    src: '/images/extensions/654cf156387ea.png',
+    alt: 'Great Lengths Extensions – Natürliche Haarverlängerung',
+  },
+  {
+    src: '/images/extensions/654cf15639425.png',
+    alt: 'Great Lengths Extensions – Keratin-Bonding Ergebnis',
+  },
+  {
+    src: '/images/extensions/654cf156397e6.png',
+    alt: 'Great Lengths Extensions – PIANO Farbpalette',
+  },
+  {
+    src: '/images/extensions/654cf23bda74f.jpg',
+    alt: 'Great Lengths Extensions – Vorher-Nachher',
+  },
+];
+
 export default function GreatLengthsHighlight() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  // Auto-play
+  useEffect(() => {
+    if (!emblaApi) return;
+    const interval = setInterval(() => emblaApi.scrollNext(), 4000);
+    return () => clearInterval(interval);
+  }, [emblaApi]);
+
+  // Track selected slide
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+    emblaApi.on('select', onSelect);
+    onSelect();
+    return () => { emblaApi.off('select', onSelect); };
+  }, [emblaApi]);
+
   return (
     <Section background="gray" padding="xl">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Image Placeholder */}
+        {/* Image Carousel */}
         <AnimatedSection animation="slide-right">
-          <div className="relative aspect-[4/5] bg-gradient-to-br from-primary-200 to-accent-200 rounded-lg overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center p-8">
-                <Sparkles className="w-24 h-24 text-white mx-auto mb-4 opacity-50" />
-                <p className="text-white text-lg font-medium">
-                  Great Lengths Extensions
-                  <br />
-                  <span className="text-sm opacity-75">Bild-Platzhalter</span>
-                </p>
+          <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-2xl group">
+            {/* Embla Carousel */}
+            <div ref={emblaRef} className="overflow-hidden h-full">
+              <div className="flex h-full">
+                {extensionImages.map((image) => (
+                  <div key={image.src} className="flex-[0_0_100%] min-w-0 relative h-full">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  </div>
+                ))}
               </div>
+            </div>
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={scrollPrev}
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white"
+              aria-label="Vorheriges Bild"
+            >
+              <ChevronLeft size={20} className="text-secondary-800" />
+            </button>
+            <button
+              onClick={scrollNext}
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white"
+              aria-label="Nächstes Bild"
+            >
+              <ChevronRight size={20} className="text-secondary-800" />
+            </button>
+
+            {/* Dots */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+              {extensionImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => emblaApi?.scrollTo(index)}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    index === selectedIndex
+                      ? 'bg-white w-7'
+                      : 'bg-white/50 hover:bg-white/75'
+                  }`}
+                  aria-label={`Bild ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
         </AnimatedSection>

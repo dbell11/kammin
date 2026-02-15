@@ -61,9 +61,16 @@ export default function MobileMenu() {
               <div className="flex flex-col h-full">
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-secondary-200">
-                  <span className="font-display text-2xl text-primary-500">
-                    Kamm In
-                  </span>
+                  <div className="flex items-center space-x-3">
+                    <img
+                      src="/kammin-logo.svg"
+                      alt="Kamm In Logo"
+                      className="w-10 h-10 object-contain"
+                    />
+                    <span className="font-display text-2xl text-primary-500">
+                      Kamm In
+                    </span>
+                  </div>
                   <button
                     onClick={() => setIsOpen(false)}
                     className="text-secondary-700 hover:text-primary-500 transition-colors p-2"

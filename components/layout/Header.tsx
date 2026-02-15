@@ -34,9 +34,14 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center space-x-2 group"
+            className="flex items-center space-x-3 group"
           >
-            <span className="font-display text-3xl text-primary-500 transition-colors group-hover:text-primary-600">
+            <img
+              src="/kammin-logo.svg"
+              alt="Kamm In Logo"
+              className="w-12 h-12 object-contain transition-transform group-hover:scale-105"
+            />
+            <span className="font-display text-2xl md:text-3xl text-primary-500 transition-colors group-hover:text-primary-600">
               Kamm In
             </span>
           </Link>

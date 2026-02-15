@@ -1,13 +1,10 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  output: 'export', // Enable static HTML export
+  // Vercel hosts Next.js natively - no static export needed
+  // This enables next/image optimization, ISR, and other server features
 
-  images: {
-    unoptimized: true, // Required for static export
-  },
-
-  // Trailing slashes for better static hosting
+  // Trailing slashes for clean URLs
   trailingSlash: true,
 
   // React strict mode for better development
