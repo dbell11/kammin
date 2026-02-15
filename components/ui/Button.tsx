@@ -28,7 +28,7 @@ export default function Button({
   const sizeStyles = {
     sm: 'px-4 py-2 text-sm',
     md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg',
+    lg: 'px-6 py-3 text-base md:px-8 md:py-4 md:text-lg',
   };
 
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;

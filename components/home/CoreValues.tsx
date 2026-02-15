@@ -12,7 +12,7 @@ const iconMap = {
 export default function CoreValues() {
   return (
     <Section background="primary" padding="xl">
-      <div className="text-center mb-16">
+      <div className="text-center mb-8 md:mb-16">
         <AnimatedSection animation="fade">
           <h2 className="font-display text-4xl md:text-5xl text-secondary-900 mb-4">
             Unsere Werte
@@ -23,7 +23,7 @@ export default function CoreValues() {
         </AnimatedSection>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
         {CORE_VALUES.map((value, index) => {
           const Icon = iconMap[value.icon as keyof typeof iconMap];
           return (

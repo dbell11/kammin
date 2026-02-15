@@ -35,7 +35,7 @@ export default function ContactCTA() {
   return (
     <Section background="gray" padding="xl">
       <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Call to Action */}
           <div>
             <AnimatedSection animation="slide-right">
@@ -72,7 +72,7 @@ export default function ContactCTA() {
           {/* Contact Information */}
           <div>
             <AnimatedSection animation="slide-left">
-              <div className="bg-white rounded-lg shadow-xl p-8">
+              <div className="bg-white rounded-lg shadow-xl p-5 md:p-8">
                 <h3 className="font-serif text-2xl text-secondary-900 mb-6">
                   Kontaktinformationen
                 </h3>

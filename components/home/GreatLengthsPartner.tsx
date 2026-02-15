@@ -27,7 +27,7 @@ export default function GreatLengthsPartner() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16"
+          className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16"
         >
           {/* Left: Great Lengths Branding */}
           <div className="flex-1 text-center lg:text-left">
@@ -44,7 +44,7 @@ export default function GreatLengthsPartner() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="font-display text-5xl md:text-6xl text-white italic mb-4"
+              className="font-display text-3xl sm:text-4xl md:text-6xl text-white italic mb-4"
             >
               Great Lengths
             </motion.h2>

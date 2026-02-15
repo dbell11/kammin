@@ -18,10 +18,10 @@ export default function DienstleistungenPage() {
       <Section background="primary" padding="xl">
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection animation="fade">
-            <h1 className="font-display text-5xl md:text-6xl text-secondary-900 mb-6">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-6xl text-secondary-900 mb-6">
               Unsere Dienstleistungen
             </h1>
-            <p className="text-xl text-secondary-700 leading-relaxed">
+            <p className="text-base md:text-xl text-secondary-700 leading-relaxed">
               Von professionellen Haarschnitten über kreative Färbungen bis hin zu
               hochwertigen Extensions – wir bieten Ihnen ein umfassendes Spektrum an
               Beauty-Services in entspannter, luxuriöser Atmosphäre.

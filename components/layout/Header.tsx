@@ -25,8 +25,8 @@ export default function Header() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-md py-4'
-          : 'bg-white/80 backdrop-blur-sm py-6'
+          ? 'bg-white/95 backdrop-blur-md shadow-md py-3 md:py-4'
+          : 'bg-white/80 backdrop-blur-sm py-4 md:py-6'
       }`}
     >
       <div className="container mx-auto px-4">
@@ -39,7 +39,7 @@ export default function Header() {
             <img
               src="/kammin-logo.svg"
               alt="Kamm In Logo"
-              className="w-12 h-12 object-contain transition-transform group-hover:scale-105"
+              className="w-10 h-10 md:w-12 md:h-12 object-contain transition-transform group-hover:scale-105"
             />
             <span className="font-display text-2xl md:text-3xl text-primary-500 transition-colors group-hover:text-primary-600">
               Kamm In

@@ -24,10 +24,10 @@ export default function GaleriePage() {
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection animation="fade">
             <Camera className="w-16 h-16 text-primary-600 mx-auto mb-6" />
-            <h1 className="font-display text-5xl md:text-6xl text-secondary-900 mb-6">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-6xl text-secondary-900 mb-6">
               Unsere Galerie
             </h1>
-            <p className="text-xl text-secondary-700 leading-relaxed">
+            <p className="text-base md:text-xl text-secondary-700 leading-relaxed">
               Lassen Sie sich von unseren Arbeiten inspirieren. Jede Kundin ist
               einzigartig – sehen Sie selbst!
             </p>

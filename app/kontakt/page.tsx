@@ -49,10 +49,10 @@ export default function KontaktPage() {
       <Section background="primary" padding="xl">
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection animation="fade">
-            <h1 className="font-display text-5xl md:text-6xl text-secondary-900 mb-6">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-6xl text-secondary-900 mb-6">
               Kontakt
             </h1>
-            <p className="text-xl text-secondary-700 leading-relaxed">
+            <p className="text-base md:text-xl text-secondary-700 leading-relaxed">
               Wir freuen uns auf Ihre Anfrage. Kontaktieren Sie uns telefonisch
               oder nutzen Sie unser Kontaktformular.
             </p>
@@ -62,7 +62,7 @@ export default function KontaktPage() {
 
       {/* Contact Methods */}
       <Section background="white" padding="xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-16">
           {contactInfo.map((info, index) => {
             const Icon = info.icon;
             const content = (

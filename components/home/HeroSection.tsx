@@ -22,7 +22,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="font-display text-6xl md:text-hero text-primary-500 mb-6">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-hero text-primary-500 mb-6">
               {BUSINESS_INFO.name}
             </h1>
           </motion.div>
@@ -33,7 +33,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p className="font-serif text-2xl md:text-3xl text-secondary-700 mb-4">
+            <p className="font-serif text-xl sm:text-2xl md:text-3xl text-secondary-700 mb-4">
               {BUSINESS_INFO.fullName.split(' - ')[1]}
             </p>
           </motion.div>
@@ -44,10 +44,10 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <p className="font-serif text-3xl md:text-4xl text-secondary-800 italic mb-8 text-shadow-soft">
+            <p className="font-serif text-xl sm:text-2xl md:text-4xl text-secondary-800 italic mb-8 text-shadow-soft">
               "{BUSINESS_INFO.mission}"
             </p>
-            <p className="text-lg text-secondary-600 mb-12">
+            <p className="text-base md:text-lg text-secondary-600 mb-12">
               – {BUSINESS_INFO.owner}
             </p>
           </motion.div>

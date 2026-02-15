@@ -14,14 +14,14 @@ export default function GalleryFilter({
   onCategoryChange,
 }: GalleryFilterProps) {
   return (
-    <div className="flex flex-wrap justify-center gap-3 mb-12">
+    <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-6 md:mb-12">
       {categories.map((category) => {
         const isActive = activeCategory === category.id;
         return (
           <motion.button
             key={category.id}
             onClick={() => onCategoryChange(category.id)}
-            className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+            className={`px-4 py-2 md:px-6 md:py-3 text-sm md:text-base rounded-full font-medium transition-all duration-300 ${
               isActive
                 ? 'bg-primary-500 text-white shadow-lg'
                 : 'bg-white text-secondary-700 hover:bg-primary-100 hover:text-primary-700 shadow-md'

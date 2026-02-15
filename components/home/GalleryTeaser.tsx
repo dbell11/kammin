@@ -40,7 +40,7 @@ const featuredItems = [
 export default function GalleryTeaser() {
   return (
     <Section background="white" padding="xl">
-      <div className="text-center mb-16">
+      <div className="text-center mb-8 md:mb-16">
         <AnimatedSection animation="fade">
           <h2 className="font-display text-4xl md:text-5xl text-secondary-900 mb-4">
             Unsere Arbeiten
@@ -51,7 +51,7 @@ export default function GalleryTeaser() {
         </AnimatedSection>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-12">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
         {featuredItems.map((item, index) => (
           <AnimatedSection
             key={item.id}

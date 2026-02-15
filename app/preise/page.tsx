@@ -70,10 +70,10 @@ export default function PreisePage() {
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection animation="fade">
             <Euro className="w-16 h-16 text-primary-600 mx-auto mb-6" />
-            <h1 className="font-display text-5xl md:text-6xl text-secondary-900 mb-6">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-6xl text-secondary-900 mb-6">
               Unsere Preise
             </h1>
-            <p className="text-xl text-secondary-700 leading-relaxed">
+            <p className="text-base md:text-xl text-secondary-700 leading-relaxed">
               Transparente Preise für höchste Qualität. Alle Preise verstehen sich
               inklusive Mehrwertsteuer.
             </p>

@@ -41,7 +41,7 @@ const services = [
 export default function ServicesPreview() {
   return (
     <Section background="white" padding="xl">
-      <div className="text-center mb-16">
+      <div className="text-center mb-8 md:mb-16">
         <AnimatedSection animation="fade">
           <h2 className="font-display text-4xl md:text-5xl text-secondary-900 mb-4">
             Unsere Dienstleistungen
@@ -53,7 +53,7 @@ export default function ServicesPreview() {
         </AnimatedSection>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
         {services.map((service, index) => {
           const Icon = iconMap[service.icon];
           return (

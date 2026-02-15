@@ -61,7 +61,7 @@ export default function GreatLengthsHighlight() {
 
   return (
     <Section background="gray" padding="xl">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         {/* Image Carousel */}
         <AnimatedSection animation="slide-right">
           <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-2xl group">
@@ -85,14 +85,14 @@ export default function GreatLengthsHighlight() {
             {/* Navigation Arrows */}
             <button
               onClick={scrollPrev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg opacity-70 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-white"
               aria-label="Vorheriges Bild"
             >
               <ChevronLeft size={20} className="text-secondary-800" />
             </button>
             <button
               onClick={scrollNext}
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg opacity-70 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-white"
               aria-label="Nächstes Bild"
             >
               <ChevronRight size={20} className="text-secondary-800" />
